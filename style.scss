@@ -1,0 +1,13 @@
+$bg: rgba(44,44,44,1);
+$text: rgba(222,222,222,1);
+
+
+body {
+  background-color: $bg;
+  color: $text;
+}
+
+.grid-container {
+  background-color: rgb(150, 150, 150);
+  display: grid;
+}
