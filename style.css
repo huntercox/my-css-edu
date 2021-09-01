@@ -1,9 +1,23 @@
+@import url("./node_modules/minireset.css/minireset.min.css");
 body {
-  background-color: #2c2c2c;
+  background-color: #0b0b0b;
   color: #dedede;
+  min-height: 100vh;
+}
+body a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
 }
 
 .grid-container {
-  background-color: #969696;
+  min-height: 100vh;
   display: grid;
+  background-color: #969696;
+  grid-template-columns: 3;
+}
+
+header {
+  background-color: #2d23a5;
+  width: 100%;
+  padding: 20px 0;
 }
