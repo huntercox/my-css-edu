@@ -1,5 +1,6 @@
 @import url("./node_modules/minireset.css/minireset.min.css");
 body {
+  font-family: "Operator Mono";
   background-color: #0b0b0b;
   color: #dedede;
   min-height: 100vh;
@@ -7,17 +8,130 @@ body {
 body a {
   color: rgba(255, 255, 255, 0.95);
   text-decoration: none;
+  transition: color ease 150ms;
+}
+body a:hover {
+  color: #13cbcb;
 }
 
 .grid-container {
   min-height: 100vh;
   display: grid;
-  background-color: #969696;
   grid-template-columns: 3;
+}
+.grid-container .columns {
+  display: grid;
+}
+.grid-container .inner {
+  padding: 2rem 0;
+  width: 90%;
+  margin: 0 auto;
+}
+@media (min-width: 567px) {
+  .grid-container .inner {
+    width: 80%;
+  }
+}
+.grid-container .full {
+  padding: 2rem;
+  background-color: #505050;
+}
+.grid-container .full p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2rem;
 }
 
 header {
   background-color: #2d23a5;
   width: 100%;
   padding: 20px 0;
+}
+header .inner {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+header .logo {
+  font-family: "Operator Mono";
+  font-style: italic;
+  font-size: 3rem;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+header nav ul li {
+  margin-right: 45px;
+}
+header nav ul li a {
+  font-size: 1.2rem;
+}
+
+footer {
+  background-color: #13cbcb;
+}
+footer p {
+  text-align: center;
+}
+footer a {
+  color: #0b0b0b;
+}
+
+.grid-demo h2 {
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  border-top: 4px solid #2d23a5;
+}
+
+.columns {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+@media (min-width: 992px) {
+  .columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.columns .col {
+  background-color: #2d23a5;
+  padding: 1.4rem;
+}
+.columns .col h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+.columns.five-col {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 567px) {
+  .columns.five-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .columns.five-col {
+    grid-template-columns: 40% 1fr 1fr;
+  }
+}
+.columns.five-col .col:nth-child(1) {
+  display: grid;
+  align-content: space-around;
+}
+@media (min-width: 567px) {
+  .columns.five-col .col:nth-child(1) {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 992px) {
+  .columns.five-col .col:nth-child(1) {
+    grid-row: span 2;
+    grid-column: 1;
+  }
 }
